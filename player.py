@@ -86,6 +86,7 @@ class Player(pygame.sprite.Sprite):
         if self.attacking:
             if current_time - self.attack_time >= self.attack_cooldown:
                 self.attacking = False
+                
     def update(self):
         self.input()
         self.cooldowns()
