@@ -26,7 +26,7 @@ class Player(pygame.sprite.Sprite):
     def input(self):
         keys = pygame.key.get_pressed()
 
-        # movement
+        # movement input
         if keys[pygame.K_UP]:
             self.direction.y = -1
         elif keys[pygame.K_DOWN]:
@@ -41,13 +41,13 @@ class Player(pygame.sprite.Sprite):
         else:
             self.direction.x = 0
 
-        # attack input
+        # attack input (space bar is attacking)
         if keys[pygame.K_SPACE] and not self.attacking:
             self.attacking = True
             self.attack_time = pygame.time.get_ticks()
 
             print('attack')
-        # magic input
+        # magic input (left control is for magic)
         if keys[pygame.K_LCTRL] and not self.attacking:
             self.attacking = True
             self.attack_time = pygame.time.get_ticks()

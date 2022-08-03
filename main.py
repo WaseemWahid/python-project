@@ -10,7 +10,7 @@ class Game:
 		# general setup
 		pygame.init()
 		self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-		pygame.display.set_caption('Dojo Run')
+		pygame.display.set_caption('Zelda')
 		self.clock = pygame.time.Clock()
 		self.level = Level()
         
