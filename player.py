@@ -26,7 +26,6 @@ class Player(pygame.sprite.Sprite):
 
         self.obstacle_sprites = obstacle_sprites
         
-        
     def import_player_assests(self):
         character_path = './graphics/player/'
         self.animations = {
