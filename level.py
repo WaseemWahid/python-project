@@ -49,12 +49,12 @@ class Level:
                             surface = graphics['objects'][int(col)]
                             Tile((x,y),[self.visible_sprites, self.obstacle_sprites], 'object', surface)
 
-        self.player = Player((2000, 1430), [self.visible_sprites], self.obstacle_sprites, self.create_attack)
+        self.player = Player((2000, 1430), [self.visible_sprites], self.obstacle_sprites, self.create_attack, self.destory_attack)
 
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
 
-    def destory_weapon(self):
+    def destory_attack(self):
         if self.current_attack:
             self.current_attack.kill()
         self.current_attack = None
