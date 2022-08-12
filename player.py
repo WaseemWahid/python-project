@@ -22,9 +22,6 @@ class Player(pygame.sprite.Sprite):
         self.attacking = False
         self.attack_cooldown = 400
         self.attack_time = None
-
-
-
         self.obstacle_sprites = obstacle_sprites
 
         # weapon
