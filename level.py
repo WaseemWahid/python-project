@@ -9,6 +9,7 @@ from support import *
 from random import choice
 from weapon import Weapon
 from ui import UI
+from enemy import Enemy
 
 class Level:
     def __init__(self):
@@ -31,7 +32,8 @@ class Level:
         layout = {
             'boundary': import_csv_layout('map_FloorBlocks.csv'),
             'grass': import_csv_layout('map_Grass.csv'),
-            'object': import_csv_layout('map_LargeObjects.csv')
+            'object': import_csv_layout('map_LargeObjects.csv'),
+            'entities': import_csv_layout('./map/map_Entities.csv')
         }
         graphics = {
             'grass': import_folder('grass'),
@@ -53,14 +55,17 @@ class Level:
                             surface = graphics['objects'][int(col)]
                             Tile((x,y),[self.visible_sprites, self.obstacle_sprites], 'object', surface)
 
-        self.player = Player(
-            (2000, 1430), 
-            [self.visible_sprites], 
-            self.obstacle_sprites, 
-            self.create_attack, 
-            self.destory_attack,
-            self.create_magic)
-
+                        if style == 'entities':
+                            if col == '394':
+                                self.player = Player(
+                                    (x, y), 
+                                    [self.visible_sprites], 
+                                    self.obstacle_sprites, 
+                                    self.create_attack, 
+                                    self.destory_attack,
+                                    self.create_magic)
+                            else:
+                                Enemy('monster', (x, y), [self.visible_sprites])
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
 
