@@ -90,7 +90,6 @@ class Player(Entity):
                 self.attacking = True
                 self.attack_time = pygame.time.get_ticks()
                 self.create_attack()
-                print('attack')
 
             # magic input (left control is for magic)
             if keys[pygame.K_LCTRL]:
