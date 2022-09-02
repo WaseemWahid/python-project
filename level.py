@@ -102,7 +102,6 @@ class YsortCameraGroup(pygame.sprite.Group):
         self.floor_surf = pygame.image.load('ground.png').convert()
         self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
         
-
     def custom_draw(self, player):
         #getting the offset
         self.offset.x = player.rect.centerx - self.half_width
@@ -120,5 +119,3 @@ class YsortCameraGroup(pygame.sprite.Group):
         enemy_sprites = [sprite for sprite in self.sprites() if hasattr(sprite, 'sprite_type') and sprite.sprite_type == 'enemy']
         for enemy in enemy_sprites:
             enemy.enemy_update(player)
-
-        

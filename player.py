@@ -117,8 +117,7 @@ class Player(Entity):
                     self.magic_index = 0
 
                 self.magic = list(magic_data.keys())[self.magic_index]
-        
-    
+
     def get_status(self):
         #idle status
         if self.direction.x == 0 and self.direction.y == 0:
@@ -137,7 +136,7 @@ class Player(Entity):
                         self.status = self.status + '_attack'
         else:
             self.status = self.status.replace('_attack', '')
-                    
+
     def cooldowns(self):
         current_time = pygame.time.get_ticks()
 
