@@ -185,6 +185,8 @@ class Player(Entity):
         weapon_damage = weapon_data[self.weapon]['damage']
         return base_damage + weapon_damage
 
+    # magic damage and effect 
+
     def update(self):
         self.input()
         self.cooldowns()
